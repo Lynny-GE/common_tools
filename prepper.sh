@@ -42,8 +42,8 @@ ar_tar() {
 wget -q -O cf.cli.deb "https://cli.run.pivotal.io/stable?release=debian64"
 wget -q -nd -l1 -r -A 'libpq5_9.5*pgdg15.10+1_amd64.deb' http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-9.5/
 wget -q -nd -l1 -r -A 'postgresql-client*pgdg14.04+1_amd64.deb' http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-9.5/
-wget -q -nd -l1 -r -A 'libevent-2.0*14.04.2*amd64.deb' http://mirrors.kernel.org/ubuntu/pool/main/libe/libevent/
-wget -q -nd -l1 -r -A 'tmux_1.8*amd64.deb' http://mirrors.kernel.org/ubuntu/pool/main/t/tmux/
+wget -q http://mirrors.kernel.org/ubuntu/pool/main/libe/libevent/libevent-2.0-5_2.0.21-stable-2_amd64.deb
+wget -q http://mirrors.kernel.org/ubuntu/pool/main/t/tmux/tmux_1.8-5_amd64.deb
 
 for deb in ./*.deb ; do
 	ar_tar $deb
@@ -81,4 +81,3 @@ EOT
 
 cd $HOME
 rm -rf Downloads
-gotty -w bash
