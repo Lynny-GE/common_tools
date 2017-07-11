@@ -98,7 +98,7 @@ egrep '^export' $0 >> ${HOME}/.env.sh
 # These are here just to ensure they make it into .env.sh. Note that they're
 # just pulled out via grep, so they can't do anything fancy.
 export USER="`cat username.txt``cat cf_target.txt`"
-export DB_USER="$USER_test" # We over-ride this because in the most common case we're doing testing...
+export DB_NAME="${USER}_test" # We over-ride this because in the most common case we're doing testing...
 export PGPASSFILE=$HOME/.pgpass
 export PGSSLMODE=require
 
